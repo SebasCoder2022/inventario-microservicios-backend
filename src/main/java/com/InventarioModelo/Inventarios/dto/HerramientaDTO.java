@@ -9,7 +9,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 
-public class ProductoDTO {
+public class HerramientaDTO {
     private String nombre;
     private String categoria;
     private Double precio;
