@@ -10,8 +10,10 @@ import lombok.Setter;
 @AllArgsConstructor
 
 public class HerramientaDTO {
+
     private String nombre;
     private String categoria;
     private Double precio;
     private int cantidad;
+
 }

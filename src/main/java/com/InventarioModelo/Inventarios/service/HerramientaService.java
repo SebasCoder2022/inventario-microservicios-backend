@@ -46,7 +46,7 @@ public class HerramientaService implements IHerramientaService {
     @Override
     public HerramientaDTO modificarHerramienta(Long id, HerramientaDTO herramientaDTO) {
 
-        // 1. Buscamos el producto en Postgres. Si no existe, lanzamos un error limpio
+        // 1. Buscamos la herramienta en Postgres. Si no existe, lanzamos un error limpio
         Herramienta herramientaExistente = herramientaRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Producto no encontrado con el ID: " + id));
 
