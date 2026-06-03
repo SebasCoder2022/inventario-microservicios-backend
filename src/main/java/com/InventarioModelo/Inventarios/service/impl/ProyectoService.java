@@ -1,8 +1,9 @@
-package com.InventarioModelo.Inventarios.service;
+package com.InventarioModelo.Inventarios.service.impl;
 
 import com.InventarioModelo.Inventarios.dto.ProyectoDTO;
 import com.InventarioModelo.Inventarios.model.Proyecto;
 import com.InventarioModelo.Inventarios.repository.ProyectoRepository;
+import com.InventarioModelo.Inventarios.service.IProyectoService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
