@@ -12,6 +12,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 
@@ -64,7 +65,11 @@ public class MovimientosService implements IMovimientosService {
     @Override
     public List<MovimientosDTO> traerHistorial() {
 
-        return List.of();
+        List<Movimientos> ListaEntidades = movimientosRepository.findAll();
+
+        return ListaEntidades.stream()
+                .map(this::convertirAMovimientosDTO)
+                .collect(Collectors.toList());
     }
 
     // --- MÉTODOS AUXILIARES DE MAPEO (Limpieza DRY) ---
