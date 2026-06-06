@@ -32,6 +32,20 @@ public class MovimientosService implements IMovimientosService {
         Proyecto proyecto = proyectoRepository.findById(movimientosDTO.getProyectoId())
                 .orElseThrow(() -> new RuntimeException("Proyecto no encontrado"));
 
+        // Validar si es una Entrada
+        if (movimientosDTO.getTipo().equalsIgnoreCase("ENTRADA")) {
+            herramienta.setCantidad(herramienta.getCantidad() + movimientosDTO.getCantidad());
+        }
+
+        // Validar si es una Salida
+        else if (movimientosDTO.getTipo().equalsIgnoreCase("SALIDA")) {
+
+            if (movimientosDTO.getCantidad() > herramienta.getCantidad()) {
+                throw new RuntimeException("No hay suficiente stock disponible para la herramienta: " + herramienta.getNombre());
+            }
+            herramienta.setCantidad(herramienta.getCantidad() - movimientosDTO.getCantidad());
+        }
+
         Movimientos movimientos = new Movimientos();
 
         movimientos.setTipo(movimientosDTO.getTipo());
