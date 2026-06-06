@@ -2,7 +2,6 @@ package com.InventarioModelo.Inventarios.controller;
 
 import com.InventarioModelo.Inventarios.dto.MovimientosDTO;
 import com.InventarioModelo.Inventarios.service.IMovimientosService;
-import com.InventarioModelo.Inventarios.service.impl.MovimientosService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
